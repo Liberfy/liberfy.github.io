@@ -22,7 +22,7 @@
 			if(json.length == 0) return;
 
 			var data = json[0];
-			document.getElementById('latest-update-title').innerHTML = "Liberfy for Windows ver" + data.version;
+			document.getElementById('latest-update-title').innerHTML = "Liberfy for Windows ver " + data.version;
 			document.getElementById('latest-update-link').setAttribute('href', './updates/' + data.path)
 			document.getElementById('lastest-update-description').innerHTML = data.description.replace(/\n/g, '<br>');
 
@@ -48,11 +48,11 @@
 				var baseDiv = document.createElement('div');
 				baseDiv.setAttribute('id', 'update-' + data.version.replace(/\./g, '-'));
 
-				var link = document.createElement('a');
-				link.innerHTML = "Download";
-				link.setAttribute('href', './updates/' + data.path);
-				link.setAttribute('class', 'dl_btn');
-				baseDiv.appendChild(link);
+				// var link = document.createElement('a');
+				// link.innerHTML = "Download";
+				// link.setAttribute('href', './updates/' + data.path);
+				// link.setAttribute('class', 'dl_btn');
+				// baseDiv.appendChild(link);
 
 				var desc = document.createElement('p');
 				desc.innerHTML = data.description.replace(/\n/g, '<br>');
@@ -67,7 +67,7 @@
 	--></script>
 </head>
 <body>
-	<div id="header">
+	<div id="header" class="green">
 		<div class="wrapper">
 			<div id="header-title">
 				<span>Liberfy for Windows</span>
@@ -107,17 +107,35 @@
 			</div>
 
 			<div class="article">
-				<h2 class="article-title">必須環境</h2>
-				<ul>
-					<li>Microsoft Windows Vista / 7 / 8 / 8.1</li>
-					<li><a href="https://www.microsoft.com/ja-jp/download/details.aspx?id=30653">.NET Framework 4.5</a></li>
-				</ul>
+				<h2 class="article-title">動作環境</h2>
+				<table class="spec-table">
+					<tr>
+						<th width="100">OS</th>
+						<td>Windows Vista 以上</td>
+					</tr>
+					<tr>
+						<th>ランタイム</th>
+						<td>.NET Framework 4.5 以上</td>
+					</tr>
+					<tr>
+						<th>CPU</th>
+						<td>動作周波数1.0GHz以上[推奨]</td>
+					</tr>
+					<tr>
+						<th>メモリ</th>
+						<td>空き容量200MB以上[推奨]</td>
+					</tr>
+				</table>
 			</div>
 
 			<div class="article">
-				<h2 class="article-title">過去のバージョン</h2>
+				<h2 class="article-title">更新履歴</h2>
 				<div id="updates"></div>
 			</div>
+			
+			<footer>
+				<span id="copyright">Copyright (c) 2015-2016 atst All Rights Reserved.</span>
+			</footer>
 		</div>
 	</div>
 </body>
