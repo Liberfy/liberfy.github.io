@@ -19,6 +19,8 @@
 					return e.platform == 'windows';
 				});
 
+			console.log(JSON.parse(xhr.responseText));
+
 			if(json.length == 0) return;
 
 			var data = json[0];
